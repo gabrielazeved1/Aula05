@@ -1,3 +1,4 @@
+#script para gerar dados de teste,peguei do proprio criador do desafio.
 import os
 import sys
 import random

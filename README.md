@@ -1,7 +1,7 @@
 # Um Bilhão de Linhas: Desafio de Processamento de Dados com Python
 
 ## Introdução
-##gabriel azevedo
+
 O objetivo deste projeto é demonstrar como processar eficientemente um arquivo de dados massivo contendo 1 bilhão de linhas (~14GB), especificamente para calcular estatísticas (Incluindo agregação e ordenação que são operações pesadas) utilizando Python. 
 
 Este desafio foi inspirado no [The One Billion Row Challenge](https://github.com/gunnarmorling/1brc), originalmente proposto para Java.
@@ -70,8 +70,6 @@ Os testes foram realizados em um laptop equipado com um processador M1 da Apple 
 | Python + Polars | 33.86 sec |
 | Python + Duckdb | 14.98 sec |
 
-Obrigado por [Koen Vossen](https://github.com/koenvo) pela implementação em Polars e [Arthur Julião](https://github.com/ArthurJ) pela implementação em Python e Bash 
-
 ## Conclusão
 
 Este desafio destacou claramente a eficácia de diversas bibliotecas Python na manipulação de grandes volumes de dados. Métodos tradicionais como Bash (25 minutos), Python puro (20 minutos) e até mesmo o Pandas (5 minutos) demandaram uma série de táticas para implementar o processamento em "lotes", enquanto bibliotecas como Dask, Polars e DuckDB provaram ser excepcionalmente eficazes, requerendo menos linhas de código devido à sua capacidade inerente de distribuir os dados em "lotes em streaming" de maneira mais eficiente. O DuckDB se sobressaiu, alcançando o menor tempo de execução graças à sua estratégia de execução e processamento de dados.
@@ -94,62 +92,6 @@ Para executar este projeto e reproduzir os resultados:
 
 Este projeto destaca a versatilidade do ecossistema Python para tarefas de processamento de dados, oferecendo valiosas lições sobre escolha de ferramentas para análises em grande escala.
 
-## Bonus
+## Acrescimo 
 
 Para rodar o script Bash descrito, você precisa seguir alguns passos simples. Primeiro, assegure-se de que você tenha um ambiente Unix-like, como Linux ou macOS, que suporta scripts Bash nativamente. Além disso, verifique se as ferramentas utilizadas no script (`wc`, `head`, `pv`, `awk`, e `sort`) estão instaladas em seu sistema. A maioria dessas ferramentas vem pré-instalada em sistemas Unix-like, mas `pv` (Pipe Viewer) pode precisar ser instalado manualmente.
-
-### Instalando o Pipe Viewer (pv)
-
-Se você não tem o `pv` instalado, pode facilmente instalá-lo usando o gerenciador de pacotes do seu sistema. Por exemplo:
-
-* No Ubuntu/Debian:
-    
-    ```bash
-    sudo apt-get update
-    sudo apt-get install pv
-    ```
-    
-* No macOS (usando [Homebrew](https://brew.sh/)):
-    
-    ```bash
-    brew install pv
-    ```
-    
-### Preparando o Script
-
-1. Dê permissão de execução para o arquivo script. Abra um terminal e execute:
-    
-    ```bash
-    chmod +x process_measurements.sh
-    ```
-
-2. Rode o script. Abra um terminal e execute:
-   
-   ```bash
-   ./src/using_bash_and_awk.sh 1000
-   ```
-
-Neste exemplo, apenas as primeiras 1000 linhas serão processadas.
-
-Ao executar o script, você verá a barra de progresso (se pv estiver instalado corretamente) e, eventualmente, a saída esperada no terminal ou em um arquivo de saída, se você decidir modificar o script para direcionar a saída.
-
-## Próximos passos
-
-Esse projeto faz parte da *Jornada de Dados*
-Nossa missão é fornecer o melhor ensino em engenharia de dados
-
-Se você quer:
-
-- Aprender sobre Duckdb e engenharia de dados
-- Construir uma base sólida em Python e SQL
-- Criar ou melhorar seu portfólio de dados
-- Criar ou aumentar o seu networking na área
-- Mudar ou dar o próximo passo em sua carreira
-
-A Jornada de Dados é o seu lugar
-
-[![Imagem](https://github.com/lvgalvao/data-engineering-roadmap/raw/main/pics/jornada.png)](https://www.jornadadedados2024.com.br/workshops)
-
-Para entrar na lista de espera clique no botao
-
-[![Imagem](https://raw.githubusercontent.com/lvgalvao/data-engineering-roadmap/main/pics/lista_de_espera.png)](https://forms.gle/hJMtRDP3MPBUGvwS7?orbt_src=orbt-vst-1RWyYmpICDu9gPknLgaD)
